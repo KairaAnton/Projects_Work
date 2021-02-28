@@ -13,8 +13,11 @@ import CONSTANTS from '../../constants';
 import customValidator from '../../validators/validator';
 import Schems from '../../validators/validationSchems';
 
+const { inputContainer,input, fieldWarning, notValid, valid } = styles;
+
 class RegistrationForm extends React.Component{
 
+  
   componentWillUnmount () {
     this.props.authClear();
   }
@@ -35,23 +38,15 @@ class RegistrationForm extends React.Component{
     const {error} = auth;
     const formInputClasses = {
       container: styles.inputContainer,
-      input: styles.input,
+      input,
       warning: styles.fieldWarning,
-      notValid: styles.notValid,
-      valid: styles.valid,
+      notValid,
+      valid,
     };
     return (
       <div className={ styles.signUpFormContainer }>
         { error && <Error data={ error.data } status={ error.status }
                           clearError={ authClear }/> }
-        <div className={ styles.headerFormContainer }>
-          <h2>
-            CREATE AN ACCOUNT
-          </h2>
-          <h4>
-            We always keep your name and email address private.
-          </h4>
-        </div>
         <form onSubmit={ handleSubmit(this.clicked) }>
           <div className={ styles.row }>
             <Field

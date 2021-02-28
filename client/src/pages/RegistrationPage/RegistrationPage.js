@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { clearErrorSignUpAndLogin } from '../../actions/actionCreator';
 import CONSTANTS from '../../constants';
-import faq from './faq.json'
+import faq from './faq.json';
+import HeaderRegForm from './../../components/HeaderRegForm';
 
 const RegistrationPage = (props) => {
   props.clearError();
@@ -38,6 +39,7 @@ const RegistrationPage = (props) => {
                   style={ {textDecoration: 'none'} }><span>Login</span></Link>
           </div>
         </div>       
+        <HeaderRegForm/>
         <RegistrationForm changeRoute={ changeRoute }/>
       </div>
       <div className={ styles.footer }>
