@@ -8,6 +8,7 @@ import styles from './Home.module.sass';
 import carouselConstants from '../../carouselConstants';
 import {connect} from 'react-redux';
 import Spinner from '../../components/Spinner/Spinner';
+import TransactionsTable from '../../components/TransactionsTable';
 
 
 const Home = (props) => {
@@ -195,6 +196,7 @@ const Home = (props) => {
                     </div>
                 </div>
                 <Footer/>
+                <TransactionsTable/>
             </>)}
         </>
     )
